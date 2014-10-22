@@ -32,7 +32,7 @@ addr_messout: .word messageout
 .data
 messagein: .asciz "Enter your number: "
 scanformat: .asciz "%d"
-messageout: .asciz "Your number was 0x%X\n"
+messageout: .asciz "Your number was %d\n"
 		
 		
 
