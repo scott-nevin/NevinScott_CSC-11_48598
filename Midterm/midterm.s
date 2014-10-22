@@ -30,7 +30,7 @@ addr_format: .word scanformat
 addr_messout: .word messageout
 
 .data
-massagein: .asciz "Enter your number: "
+messagein: .asciz "Enter your number: "
 scanformat: .asciz "%d"
 messageout: .asciz "Your number was 0x%X\n"
 		
