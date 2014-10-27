@@ -32,10 +32,9 @@ main:
 	cmp r1, #4
 	bx lr
 
+_exit:
 	add sp, sp, #4
 	pop {pc}
-	
-_exit:
 	
 	mov r0, #7
 	swi 0
