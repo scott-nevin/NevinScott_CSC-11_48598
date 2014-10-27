@@ -3,7 +3,6 @@
 
 .global main
 .func main
-.func _exit
 
 main:
 	push {lr}
@@ -30,8 +29,7 @@ main:
 	beq _prob2
 	cmp r1, #3				@ send to problem 3
 	beq _prob3
-	cmp r1, #4				@ send to exit
-	beq _exit
+	bx lr
 	
 	add sp, sp, #4
 	pop {pc}
