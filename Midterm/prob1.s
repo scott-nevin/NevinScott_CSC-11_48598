@@ -34,7 +34,7 @@ _prob1:
 	mov r3, r1 
 	
 	mul r4, r3, r2
-	@ldr r1, [r4]
+	ldr r1, r4
 	ldr r0, addr_result
 	bl printf
 	
@@ -60,4 +60,4 @@ hours: .asciz "\nInput hours worked:"
 rate: .asciz "\nInput pay rate in dollars per hour"
 htest: .asciz "\n hours = %d "
 rtest: .asciz "\n rate = %d $/hr\n"
-result: .asciz "\n total = %r4 \n"
+result: .asciz "\n total = %d \n"
