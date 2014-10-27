@@ -33,20 +33,20 @@ main:
 	add sp, sp, #4
 	pop {pc}
 	
-	cmp r1, #4
-	beq _exit
-	
 _exit:
-	mov r0, #7
+
+	ldr r0, addr_exit
 	mov pc, lr
 	swi 0
 
+addr_exit: .word exit
 addr_menu: .word menu	
 addr_messin: .word messagein
 addr_format: .word scanformat
 addr_messout: .word messageout
 
 .data
+exit: .asciz "Exiting midterm"
 menu: .asciz "CSC-11 Midterm:\n1. Problem 1\n2. Problem 2\n3. Problem 3\n4. Exit\n"
 messagein: .asciz "\nEnter your choice: "
 scanformat: .asciz "%d"
