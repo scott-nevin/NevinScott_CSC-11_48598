@@ -29,17 +29,12 @@ main:
 	beq _prob2
 	cmp r1, #3				@ send to problem 3
 	beq _prob3
-	cmp r1, #4				@ send to exit
-	beq stuff
-	
-stuff:
 
 	add sp, sp, #4
 	pop {pc}
-
-	ldr r0, addr_exit
 	mov r0, #7
 	swi 0
+
 
 addr_exit: .word exit
 addr_menu: .word menu	
