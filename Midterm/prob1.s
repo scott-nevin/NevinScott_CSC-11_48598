@@ -20,7 +20,7 @@ _prob1:
 	bl scanf
 	ldr r1, [sp]
 	ldr r0, addr_htest
-	printf
+	bl printf
 	
 	ldr r0, addr_rate		@ get rate
 	bl printf
@@ -29,7 +29,7 @@ _prob1:
 	bl scanf
 	ldr r2, [sp]
 	ldr r0, addr_rtest
-	printf
+	bl printf
 	
 	
 	bal main
