@@ -34,8 +34,8 @@ main:
 	
 stuff:
 
-	@add sp, sp, #4
-	@pop {pc}
+	add sp, sp, #4
+	pop {pc}
 
 	ldr r0, addr_exit
 	mov r0, #7
