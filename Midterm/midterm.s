@@ -19,16 +19,6 @@ main:
 	bl scanf
 	
 	ldr r1, [sp]
-	cmp r1, #4 				@ send to problem1
-	bne choice
-		
-	add sp, sp, #4
-	pop {pc}
-	bx lr
-	
-choice:
-
-	ldr r1, [sp]
 	cmp r1, #1 				@ send to problem1
 	beq _prob1
 	cmp r1, #2				@ send to problem 2
@@ -37,6 +27,9 @@ choice:
 	beq _prob3
 	cmp r1, #4
 	bx lr
+		
+	add sp, sp, #4
+	pop {pc}
 
 _exit:
 	mov r0, #7
