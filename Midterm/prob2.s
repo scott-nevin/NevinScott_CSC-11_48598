@@ -12,11 +12,11 @@ _prob2:
 	ldr r0, addr_test		@ display menu
 	bl printf
 	
+	bal main				@ send back to menu
 	
 	add sp, sp, #4
 	pop {pc}
 	
-	bal main
 
 addr_test: .word test
 

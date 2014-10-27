@@ -14,7 +14,7 @@ main:
 	ldr r0, addr_messin		@ prompt for menu choice
 	bl printf
 	
-	ldr R0, addr_format		@ collect menu choice
+	ldr r0, addr_format		@ collect menu choice
 	mov r1, sp
 	bl scanf
 	
