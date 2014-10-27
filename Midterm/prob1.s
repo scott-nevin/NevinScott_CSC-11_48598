@@ -6,16 +6,16 @@
 
 _prob1:
 
-	push {lr}
-	sub sp, sp, #4
+	@push {lr}
+	@sub sp, sp, #4
 	
 	ldr r0, addr_test		@ display menu
 	bl printf
 	
 	bal main
 	
-	add sp, sp, #4
-	pop {pc}
+	@add sp, sp, #4
+	@pop {pc}
 
 addr_test: .word test
 
