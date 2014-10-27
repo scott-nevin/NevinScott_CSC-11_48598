@@ -2,7 +2,6 @@
 /*Scott Nevin*/
 
 .global _prob1
-.func _prob1
 
 _prob1:
 
@@ -11,13 +10,12 @@ _prob1:
 	
 	ldr r0, addr_test		@ display menu
 	bl printf
-
+	
+	bal main
 	
 	add sp, sp, #4
 	pop {pc}
 	
-_exit:
-	bal main
 	mov pc, lr
 
 addr_test: .word test
