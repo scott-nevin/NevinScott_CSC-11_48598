@@ -32,7 +32,6 @@ main:
 	pop {pc}
 	
 _exit:
-
 	mov r0, #7
 	swi 0
 
