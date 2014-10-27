@@ -1,6 +1,8 @@
+/*Problem 3*/
+/*Scott Nevin*/
 
-bal _prob3
-.func _prob3
+.global _prob3
+.func _prob2
 
 _prob3:
 
@@ -9,14 +11,16 @@ _prob3:
 	
 	ldr r0, addr_test		@ display menu
 	bl printf
-
+	
+	bal main				@ send back to menu
 	
 	add sp, sp, #4
 	pop {pc}
-	bal main
+	
+	mov pc, lr
 
 addr_test: .word test
 
 .data
-test: .asciz "Test for problem 3 successful"
+test: .asciz "Test for problem 3 successful\n"
 

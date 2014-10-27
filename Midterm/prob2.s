@@ -4,22 +4,23 @@
 .global _prob2
 .func _prob2
 
-_prob2:
+_prob3:
 
 	push {lr}
 	sub sp, sp, #4
 	
 	ldr r0, addr_test		@ display menu
 	bl printf
-
+	
+	bal main				@ send back to menu
 	
 	add sp, sp, #4
 	pop {pc}
-	bal main
 	
+	mov pc, lr
 
 addr_test: .word test
 
 .data
-test: .asciz "Test for problem 2 successful"
+test: .asciz "Test for problem 2 successful\n"
 

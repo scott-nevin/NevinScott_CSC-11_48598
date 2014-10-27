@@ -23,8 +23,14 @@ main:
 	bl printf
 	
 	ldr r1, [sp]
-	cmp r1, #1 				@ send to problem
+	cmp r1, #1 				@ send to problem1
 	beq _prob1
+	cmp r1, #2				@ send to problem 2
+	beq _prob2
+	cmp r1, #3				@ send to problem 3
+	beq _prob3
+	cmp r1 #4				@ send to exit
+	beq _exit
 	
 	add sp, sp, #4
 	pop {pc}
@@ -38,7 +44,7 @@ addr_format: .word scanformat
 addr_messout: .word messageout
 
 .data
-menu: .asciz "CSC-11 Midterm:\n1. Problem 1\n2. Problem 2\n3. Problem 3"
+menu: .asciz "CSC-11 Midterm:\n1. Problem 1\n2. Problem 2\n3. Problem 3\n4. Exit\n"
 messagein: .asciz "\nEnter your choice: "
 scanformat: .asciz "%d"
 messageout: .asciz "Your number was %d\n"

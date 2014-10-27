@@ -2,6 +2,7 @@
 /*Scott Nevin*/
 
 .global _prob1
+.func _prob2
 
 _prob1:
 
@@ -21,4 +22,4 @@ _prob1:
 addr_test: .word test
 
 .data
-test: .asciz "Test for problem 1 successful"
+test: .asciz "Test for problem 1 successful\n"
