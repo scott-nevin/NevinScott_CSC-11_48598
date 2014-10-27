@@ -30,7 +30,7 @@ main:
 	cmp r1, #3				@ send to problem 3
 	beq _prob3
 	cmp r1, #4
-	beq lr
+	bx lr
 
 	add sp, sp, #4
 	pop {pc}
