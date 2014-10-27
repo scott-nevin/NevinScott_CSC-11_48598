@@ -30,12 +30,12 @@ main:
 	cmp r1, #3				@ send to problem 3
 	beq _prob3
 	cmp r1, #4				@ send to exit
-	beq exit
+	beq exit_prog
 	
 	add sp, sp, #4
 	pop {pc}
 	
-exit:
+exit_prog:
 
 	ldr r0, addr_exit
 	mov pc, lr
