@@ -29,11 +29,10 @@ main:
 	beq _prob2
 	cmp r1, #3				@ send to problem 3
 	beq _prob3
+	bx lr
 	
 	add sp, sp, #4
 	pop {pc}
-	
-	bx lr
 	
 	mov r0, #7
 	swi 0
