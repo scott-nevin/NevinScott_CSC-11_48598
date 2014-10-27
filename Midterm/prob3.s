@@ -10,12 +10,12 @@ _prob3:
 	sub sp, sp, #4
 	
 	ldr r0, addr_test		@ display menu
-	bl printf
-	
-	bal main				@ send back to menu
+	bl printf 
 	
 	add sp, sp, #4
 	pop {pc}
+	
+	bal main
 
 addr_test: .word test
 
