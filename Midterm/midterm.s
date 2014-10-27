@@ -25,11 +25,11 @@ main:
 	ldr r1, [sp]
 	cmp r1, #1 				@ send to problem1
 	beq _prob1
-	cmp r1, #2				@ send to problem 2
+	cmp r1, #0				@ send to problem 2
 	beq _prob2
 	cmp r1, #3				@ send to problem 3
 	beq _prob3
-	cmp r1, #4				@ send to exit
+	cmp r1, #2				@ send to exit
 	beq _exit
 	
 	add sp, sp, #4
