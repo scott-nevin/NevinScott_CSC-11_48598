@@ -9,34 +9,6 @@ _prob3:
 	push {lr}
 	sub sp, sp, #4
 	
-factorial:
-	str lr, [sp,#-4]! 		/* Push lr onto the top of the stack */
-	str r0, [sp,#-4]! 		/* Push r0 onto the top of the stack */
-						/* Note that after that, sp is 8 byte aligned */
-	cmp r0, #0 			/* compare r0 and 0 */
-	bne is_nonzero 			/* if r0 != 0 then branch */
-	mov r0, #1 			/* r0 ← 1. This is the return */
-	b end
-	
-is_nonzero:
-					/* Prepare the call to factorial(n-1) */
-	sub r0, r0, #1 			/* r0 ← r0 - 1 */
-	bl factorial
-					/* After the call r0 contains factorial(n-1) */
-					/* Load r0 (that we kept in th stack) into r1 */
-	ldr r1, [sp] 			/* r1 ← *sp */
-	mul r0, r1, r0 			/* r0 ← r1 * r0 */
-	
-end:
-	bal main				@ send back to menu
-	
-	add sp, sp, #4
-	pop {pc}			/* Leave factorial */
-	
-	
-.globl _start
-
-_start:
 	str lr, [sp,#-4]! 		/* Push lr onto the top of the stack */
 	sub sp, sp, #4 			/* Make room for one 4 byte integer in the stack */
 					/* In these 4 bytes we will keep the number */
@@ -62,6 +34,32 @@ _start:
 	add sp, sp, #+4 		/* Discard the integer read by scanf */
 	ldr lr, [sp], #+4 		/* Pop the top of the stack and put it in lr */
 	bx lr 				/* Leave main */
+	
+factorial:
+	str lr, [sp,#-4]! 		/* Push lr onto the top of the stack */
+	str r0, [sp,#-4]! 		/* Push r0 onto the top of the stack */
+						/* Note that after that, sp is 8 byte aligned */
+	cmp r0, #0 			/* compare r0 and 0 */
+	bne is_nonzero 			/* if r0 != 0 then branch */
+	mov r0, #1 			/* r0 ← 1. This is the return */
+	b end
+	
+is_nonzero:
+					/* Prepare the call to factorial(n-1) */
+	sub r0, r0, #1 			/* r0 ← r0 - 1 */
+	bl factorial
+					/* After the call r0 contains factorial(n-1) */
+					/* Load r0 (that we kept in th stack) into r1 */
+	ldr r1, [sp] 			/* r1 ← *sp */
+	mul r0, r1, r0 			/* r0 ← r1 * r0 */
+	
+end:
+	bal main				@ send back to menu
+	
+	add sp, sp, #4
+	pop {pc}			/* Leave factorial */
+	
+	
 	
 address_of_message1: .word message1
 address_of_message2: .word message2
