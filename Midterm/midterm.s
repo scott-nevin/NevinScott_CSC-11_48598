@@ -20,12 +20,12 @@ main:
 	
 	ldr r1, [sp]
 	cmp r1, #4 				@ send to problem1
-	bne menu
+	bne choice
 		
 	add sp, sp, #4
 	pop {pc}
 	
-menu:
+choice:
 
 	ldr r1, [sp]
 	cmp r1, #1 				@ send to problem1
@@ -35,6 +35,7 @@ menu:
 	cmp r1, #3				@ send to problem 3
 	beq _prob3
 	
+	bx lr
 
 _exit:
 	mov r0, #7
