@@ -18,10 +18,15 @@ main:
 	mov r1, sp
 	bl scanf
 	
-	@ldr r1, [sp]
-	@ldr r0, addr_messout	@ Display result
-	@bl printf
+	ldr r1, [sp]
+	cmp r1, #4 				@ send to problem1
+	bne menu
+		
+	add sp, sp, #4
+	pop {pc}
 	
+menu:
+
 	ldr r1, [sp]
 	cmp r1, #1 				@ send to problem1
 	beq _prob1
@@ -29,10 +34,11 @@ main:
 	beq _prob2
 	cmp r1, #3				@ send to problem 3
 	beq _prob3
-		
-	add sp, sp, #4
-	pop {pc}
-	bx lr
+	
+
+_exit:
+	mov r0, #7
+	swi 0
 
 
 addr_exit: .word exit
