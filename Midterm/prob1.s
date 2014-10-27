@@ -25,7 +25,7 @@ _prob1:
 	ldr r0, addr_rate		@ get rate
 	bl printf
 	ldr r0, addr_format
-	mov r2, sp
+	mov r1, sp
 	bl scanf
 	ldr r2, [sp]
 	ldr r0, addr_rtest
