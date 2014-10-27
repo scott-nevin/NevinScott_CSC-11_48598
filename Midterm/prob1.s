@@ -16,7 +16,7 @@ _prob1:
 	pop {pc}
 	bal main
 	
-	@mov pc, lr
+	mov pc, lr
 
 addr_test: .word test
 
