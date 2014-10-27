@@ -18,9 +18,9 @@ main:
 	mov r1, sp
 	bl scanf
 	
-	ldr r1, [sp]
-	ldr r0, addr_messout	@ Display result
-	bl printf
+	@ldr r1, [sp]
+	@ldr r0, addr_messout	@ Display result
+	@bl printf
 	
 	ldr r1, [sp]
 	cmp r1, #1 				@ send to problem1
@@ -30,12 +30,12 @@ main:
 	cmp r1, #3				@ send to problem 3
 	beq _prob3
 	cmp r1, #4				@ send to exit
-	beq exit_prog
+	beq _exit
 	
 	add sp, sp, #4
 	pop {pc}
 	
-exit_prog:
+_exit:
 
 	ldr r0, addr_exit
 	mov pc, lr
