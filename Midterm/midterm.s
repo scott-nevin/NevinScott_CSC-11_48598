@@ -2,6 +2,7 @@
 /* Scott Nevin */
 
 .global main
+.func main
 
 main:
 	push {lr}
@@ -21,8 +22,9 @@ main:
 	ldr r0, addr_messout	@ Display result
 	bl printf
 	
+	ldr r1, [sp]
 	cmp r1, #1 				@ send to problem
-	beq 
+	beq _prob1
 	
 	add sp, sp, #4
 	pop {pc}
@@ -36,8 +38,8 @@ addr_format: .word scanformat
 addr_messout: .word messageout
 
 .data
-menu: .asciz "CSC-11 Midterm:/n1. Problem 1\n2. Problem 2\n3. Problem 3"
-messagein: .asciz "Enter your choice: "
+menu: .asciz "CSC-11 Midterm:\n1. Problem 1\n2. Problem 2\n3. Problem 3"
+messagein: .asciz "\nEnter your choice: "
 scanformat: .asciz "%d"
 messageout: .asciz "Your number was %d\n"
 		
