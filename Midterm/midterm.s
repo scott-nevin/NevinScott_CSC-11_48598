@@ -2,7 +2,6 @@
 /* Scott Nevin */
 
 .global main
-.func main
 
 main:
 	push {lr}
@@ -19,8 +18,11 @@ main:
 	bl scanf
 	
 	ldr r1, [sp]
-	ldr r0, addr_messout	@ Display result, send to function
+	ldr r0, addr_messout	@ Display result
 	bl printf
+	
+	cmp r1, #1 				@ send to problem
+	beq 
 	
 	add sp, sp, #4
 	pop {pc}
