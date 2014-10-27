@@ -27,7 +27,7 @@ _prob1:
 	ldr r0, addr_format
 	mov r1, sp
 	bl scanf
-	ldr r2, [sp]
+	ldr r1, [sp]
 	ldr r0, addr_rtest
 	bl printf
 	
@@ -50,4 +50,4 @@ scanformat: .asciz "%d"
 hours: .asciz "\nInput hours worked:"
 rate: .asciz "\nInput pay rate in dollars per hour"
 htest: .asciz "\n hours = %d "
-rtest: .asciz "\n rate = %d $/hr"
+rtest: .asciz "\n rate = %d $/hr\n"
