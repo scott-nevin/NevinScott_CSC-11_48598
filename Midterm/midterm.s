@@ -25,6 +25,8 @@ main:
 	beq _prob2
 	cmp r1, #3				@ send to problem 3
 	beq _prob3
+	
+	ldr r1, [sp]
 	cmp r1, #4
 	moveq r0, #7
 		
