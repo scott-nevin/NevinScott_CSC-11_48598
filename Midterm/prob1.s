@@ -21,6 +21,7 @@ _prob1:
 	ldr r1, [sp]
 	ldr r0, addr_htest
 	bl printf
+	mov r2, r1
 	
 	ldr r0, addr_rate		@ get rate
 	bl printf
@@ -30,6 +31,13 @@ _prob1:
 	ldr r1, [sp]
 	ldr r0, addr_rtest
 	bl printf
+	mov r3, r1 
+	
+	mul r4, r3, r2
+	ldr r1, r4
+	ldr r0, addr_result
+	bl printf
+	
 	
 	
 	bal main
@@ -43,6 +51,7 @@ addr_hours: .word hours
 addr_rate: .word rate
 addr_htest: .word htest
 addr_rtest: .word rtest
+addr_result: .word result
 
 .data
 test: .asciz "Problem 1 \n Enter hours and pay rate \n to get gross pay "
@@ -51,3 +60,4 @@ hours: .asciz "\nInput hours worked:"
 rate: .asciz "\nInput pay rate in dollars per hour"
 htest: .asciz "\n hours = %d "
 rtest: .asciz "\n rate = %d $/hr\n"
+result: .asciz "\n total = %d \n"
