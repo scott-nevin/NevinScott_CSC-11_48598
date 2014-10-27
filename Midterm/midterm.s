@@ -3,6 +3,7 @@
 
 .global main
 .func main
+.func _exit
 
 main:
 	push {lr}
