@@ -2,25 +2,13 @@
 /*Scott Nevin*/
 
 .global _prob3
-.func _prob2
+.func _prob3
 
 _prob3:
 
 	push {lr}
 	sub sp, sp, #4
 	
-	ldr r0, addr_test		@ display menu
-	bl printf
-	/* -- factorial01.s */
-.data
-
-
-message1: .asciz "Type a number: "
-format: .asciz "%d"
-message2: .asciz "The factorial of %d is %d\n"
-
-.text
-
 factorial:
 	str lr, [sp,#-4]! 		/* Push lr onto the top of the stack */
 	str r0, [sp,#-4]! 		/* Push r0 onto the top of the stack */
@@ -40,9 +28,10 @@ is_nonzero:
 	mul r0, r1, r0 			/* r0 ← r1 * r0 */
 	
 end:
-	add sp, sp, #+4 		/* Discard the r0 we kept in the stack */
-	ldr lr, [sp], #+4 		/* Pop the top of the stack and put it in lr */
-	bx lr				/* Leave factorial */
+	bal main				@ send back to menu
+	
+	add sp, sp, #4
+	pop {pc}			/* Leave factorial */
 	
 	
 .globl _start
