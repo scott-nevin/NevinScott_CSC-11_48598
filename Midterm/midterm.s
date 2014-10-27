@@ -23,6 +23,8 @@ main:
 	@bl printf
 	
 	ldr r1, [sp]
+	cmp r1, #4
+	bx lr
 	cmp r1, #1 				@ send to problem1
 	beq _prob1
 	cmp r1, #2				@ send to problem 2
@@ -32,8 +34,6 @@ main:
 		
 	add sp, sp, #4
 	pop {pc}
-	
-	bx lr
 	
 _exit:	
 	mov r0, #7
