@@ -4,7 +4,7 @@
 .global _prob2
 .func _prob2
 
-_prob3:
+_prob2:
 
 	push {lr}
 	sub sp, sp, #4
