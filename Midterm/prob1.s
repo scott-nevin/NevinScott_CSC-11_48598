@@ -34,7 +34,7 @@ _prob1:
 	mov r3, r1 
 	
 	mul r4, r3, r2
-	ldr r1, r4
+	ldr r1, [r4]
 	ldr r0, addr_result
 	bl printf
 	
