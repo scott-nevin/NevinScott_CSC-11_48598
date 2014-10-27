@@ -16,7 +16,6 @@ _prob3:
 	
 	add sp, sp, #4
 	pop {pc}
-	
 
 addr_test: .word test
 
