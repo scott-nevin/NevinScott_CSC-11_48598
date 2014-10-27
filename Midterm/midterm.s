@@ -37,9 +37,6 @@ main:
 	
 _exit:
 
-	ldr r0, addr_messin		@ show exit
-	bl printf
-	
 	mov r0, #7
 	swi 0
 
