@@ -29,10 +29,8 @@ main:
 	beq _prob2
 	cmp r1, #3				@ send to problem 3
 	beq _prob3
-	cmp r1, #4
+	
 	bx lr
-
-_exit:
 	add sp, sp, #4
 	pop {pc}
 	
