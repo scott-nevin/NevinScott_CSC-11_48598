@@ -19,9 +19,9 @@ _prob1:
 	mov r1, sp
 	bl scanf
 	ldr r1, [sp]
+	mov r2, r1
 	ldr r0, addr_htest
 	bl printf
-	mov r2, r1
 	
 	ldr r0, addr_rate		@ get rate
 	bl printf
@@ -29,9 +29,9 @@ _prob1:
 	mov r1, sp
 	bl scanf
 	ldr r1, [sp]
+	mov r3, r1 
 	ldr r0, addr_rtest
 	bl printf
-	mov r3, r1 
 	
 	mul r4, r3, r2
 	mov r1, r4
