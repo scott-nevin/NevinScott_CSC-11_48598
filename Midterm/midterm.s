@@ -32,9 +32,7 @@ main:
 		
 	add sp, sp, #4
 	pop {pc}
-	
-_exit:	
-	mov pc, lr
+	bx lr
 
 
 addr_exit: .word exit
