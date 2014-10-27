@@ -45,9 +45,9 @@ end:
 	bx lr				/* Leave factorial */
 	
 	
-.globl _prob3
+.globl _start
 
-_prob3:
+_start:
 	str lr, [sp,#-4]! 		/* Push lr onto the top of the stack */
 	sub sp, sp, #4 			/* Make room for one 4 byte integer in the stack */
 					/* In these 4 bytes we will keep the number */
