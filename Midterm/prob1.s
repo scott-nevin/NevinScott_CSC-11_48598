@@ -25,11 +25,9 @@ _prob1:
 	mov r2, sp 
 	bl scanf 
 	
-	ldr r2, [sp]
-	ldr r0, addr_rtest		@check rate
+	ldr r2, addr_rtest		@check rate
 	bl printf
-	ldr r1, [sp]
-	ldr r0, addr_htest		@check hours
+	ldr r1, addr_htest		@check hours
 	bl printf
 	
 	
