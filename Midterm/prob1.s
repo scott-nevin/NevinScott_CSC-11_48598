@@ -15,17 +15,21 @@ _prob1:
 	bl printf
 	ldr r0, addr_hours		@ get hours
 	bl printf
-	ldr r1, addr_format
+	ldr r0, addr_format
+	mov r1, sp
 	bl scanf
 	
 	ldr r0, addr_rate		@ get rate
 	bl printf
-	ldr r2, addr_format
+	ldr r0, addr_format
+	mov r2, sp 
 	bl scanf 
 	
-	ldr r1, addr_htest		@check hours
+	ldr r2, [sp]
+	ldr r0, addr_rtest		@check rate
 	bl printf
-	ldr r2, addr_rtest		@check rate
+	ldr r1, [sp]
+	ldr r0, addr_htest		@check hours
 	bl printf
 	
 	
